@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: ghostwhite;
+}
+.container{
+    background-color: whitesmoke;
+    margin-left: 320px;
+    height:350px;
+    margin-top: 150px;
+    width: 1000px;
+    border-radius: 10px;
+    box-shadow:4px;
+
+}
+h1{
+   height: 45x;
+   width: 1000px;
+   background-color:green;
+   color: white;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  border-color: black;
+}
+th {
+  background-color: darkgray;
+}
+a{
+    text-decoration: none;
+}
+    </style>
+</head>
+<body>
+    {% include 'customer/base.html' %}
+    
+<div class="container"><br>
+    <center><h1> Table successful</h1></center>
+    <table border="1" height="200" width="1000" align="center" >
+    <tr align="center" background-color="blue">
+        <th >s.no</th>  <th>Table number</th>   <th>Date</th>  <th>Time</th>   <th>Guest</th><th>Food</th> <th>Parking</th><th>Edit</th> <th> cancel</th>
+    </tr>
+    {% for table in tableorders %}
+    <tr align="center" >
+        <td>{{forloop.counter}}</td>  
+
+        <td>Table : {{table.table_id}} </td> 
+
+        <td>{{table.date}}</td>
+
+        <td>{{table.time}}</td> 
+
+        <td>{{table.table.seater}}</td>
+        <td><a href="{% url 'customer-food-acknowledgement' table.id %}">View Food</a></td>
+
+        <td><a href="{% url 'customer-view-parking' table.id %}">View Parking</a></td>
+
+        <td> <a href="{% url 'customer-table-edit' table.id %}" > Edit</a></td>
+
+        <td> <a href="{% url 'customer-table-cancel' table.id %}"> Cancel</a></td>
+
+    </tr>
+    {% endfor %}
+</table>
+
+
+
+        <center><h1> Food successful</h1></center>
+        <table border="1" height="200" width="1000" align="center" >
+        <tr align="center" background-color="blue">
+            <th >s.no</th>  <th>image</th>   <th>Food </th>  <th>Qunatity</th>   <th> Locaton</th> <th>Edit</th> <th>cancel</th>
+        </tr>
+        {% for food in foodorders %}
+            {% if food.address1 and food.address2 %}    
+            <tr align="center" >
+                <td>{{forloop.counter}}</td>  
+                <td><img src="{{food.food.food_pic.url}}" width="50" height="50"></td>  
+                 <td>{{food.food}}</td>  
+                 <td> {{food.food_quantity}}</td>  
+                 <td>{{food.address1}},{{food.address2}}</td> 
+                 <td><a href="{% url 'customer-food-delivery-edit' food.id %}">Edit</a></td>
+                 <td><a href="{% url 'customer-food-delivery-delete' food.id %}">cancel</a></td>
+</tr>
+{% endif %}
+{% endfor %}
+    </div>
+    Total Price:{{price}}
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+<html>
+
+<head>
+  <title></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <style>
+      * {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+ 
+}
+.rating-css {
+  height: 250px;
+  width: 400px;
+  background: ghostwhite;
+  border: 4px solid #838383;
+  padding: 20px;
+}
+.rating-css div {
+    margin-top: -20px;
+  color: yellow;
+  font-size: 30px;
+  font-family: sans-serif;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 20px 0;
+}
+.rating-css input {
+  display: none;
+}
+.rating-css input + label {
+  font-size: 20px;
+  text-shadow: 1px 1px 0 #ffe400;
+  cursor: pointer;
+}
+.rating-css input:checked + label ~ label {
+  color: #838383;
+}
+
+.rating-css label:active {
+  transform: scale(0.8);
+  transition: 0.3s ease;
+}
+
+button{
+    width: 150px;
+    padding: 10px;
+    background-color:slateblue;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    margin-left: 10px;
+}
+.cancel{
+    width: 150px;
+    padding: 10px;
+    background-color:orange;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    margin-left: 20px;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <div class="rating-css">
+    <form action="" method="post">
+      {% csrf_token %}
+    <div><font color="green">Feed Back</font></div>
+    
+    <div class="star-icon">
+      <input type="radio" name="rating1" id="rating1">
+      <label for="rating1" class="fa fa-star"></label>
+      <input type="radio" name="rating2" id="rating2">
+      <label for="rating2" class="fa fa-star"></label>
+      <input type="radio" name="rating3" id="rating3">
+      <label for="rating3" class="fa fa-star"></label>
+      <input type="radio" name="rating4" id="rating4">
+      <label for="rating4" class="fa fa-star"></label>
+      <input type="radio" name="rating5" id="rating5">
+      <label for="rating5" class="fa fa-star"></label><br><br>
+      {% render_field form.data|attr:"required:true" %}
+      
+
+      <button type="submit" class="cancel">Cancel</button>    <button type="submit">Post</button> 
+    </form>
+    </div>
+
+    </div>
+  </div>
+
+  
+ </body>
+
+</html>

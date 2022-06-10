@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+           body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url(https://www.chargebee.com/blog/blog/images/wp-content/uploads/2013/01/Sign-up-300x199.jpg);
+  background-repeat:no-repeat;
+  background-size:1600px 800px;
+}
+
+
+h1{
+    margin-top :150px ;
+}
+
+    .container{
+    width: 500px;
+    height:450px;
+    background-color: #FFFAF0;
+    margin-left: 550px;
+ 
+    border-radius: 10px ;
+}
+.firstname,.ename,.username,.confirmpassword{
+    margin:15px;
+    width: 200px;
+    padding: 10px;
+    border: 2px solid gray;
+    border-radius: 4px;
+}
+.lastname,.phn,.password{
+   
+    width: 200px;
+    padding: 10px;
+    border: 2px solid gray;
+    border-radius: 4px;
+    
+} 
+.confirm{
+    margin-left: 15px;
+}
+label{
+    margin-left: 20px;
+    margin-top: 25px;
+}
+
+.img{
+    margin:  .4rem 0;
+    margin-left: 20px;
+}
+input[type=submit]{
+    width: 100px;
+    padding: 10px;
+    background-color: darkgreen;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-left: 200px;
+}
+p{
+    margin-left: 15px;
+}
+a{
+    text-decoration: none;
+}
+    </style>
+</head>
+<body>
+    {% include 'core/navbar.html' %}
+    {{userform.non_field_errors}}
+    {{customerform.non_field_errors}}
+    <center> <h1><font size="8" color="red"> Sign Up</font></h1></center>
+    
+    <div class="container">
+            <form action="" method="POST" novalidate enctype="multipart/form-data">   
+                {% csrf_token %}
+                {{userform.first_name.errors}}
+                {% render_field userform.first_name|attr:'required:true'  class="firstname" placeholder="First Name" %}
+                {{userform.last_name.errors}}
+                {% render_field userform.last_name|attr:'required:true' class="lastname" placeholder="Last Name" %}    
+                {{userform.email.errors}}   
+                {% render_field userform.email|attr:"required:true" class="ename" placeholder="Email" %}
+                {{customer.mobile_number.errors}}
+                {% render_field customerform.mobile_number|attr:"required:true" class="phn" placeholder="Mobile Number" %}
+                {{userform.username.errors}}
+                {% render_field userform.username|attr:"required:true" class="username" placeholder="Username" %}
+                {{userform.password1.errors}}
+                {% render_field userform.password1|attr:"required:true" class="password" placeholder="Password" %}
+                {{userform.password2.errors}}
+                {% render_field userform.password2|attr:"required:true" class="confirmpassword" placeholder="Confirm Password" %}<br>
+        <label for="avatar">Choose a profile picture:</label><br>
+        {% render_field customerform.profile_pic|attr:"required:true" class="img" %}
+        <input type="submit" value="submit"><br>
+        <p> Already have an account ?&emsp;<a href="{% url 'customer-sign-in' %}">Log in</a></p> 
+      </div>
+    </div>
+ 
+</form>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+   <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <title>Document</title>
+   <style>
+         body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: ghostwhite;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color:#2c3e50;
+  position:fixed;
+  width:100%;
+}
+
+
+
+.topnav .logo{
+  font-size:20px;
+  font-weight: Bold;
+ 
+}
+.topnav .logo p{
+  float:left;
+  color:white;
+  text-transform: uppercase;
+  margin-top:15px;
+  margin-left: 35px;
+}
+.sidebar{
+    background-color:#2c3e50;
+    margin-top:70px;
+    position: fixed;
+    left:0;
+    width:250px;
+    margin-top: 45px;
+    height:100%;
+
+}
+.sidebar .profile_image{
+    width: 100px;
+    height: 100px;
+    margin-top: 40px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+
+}
+.sidebar h4{
+    color:#ccc;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.sidebar a{
+   color:#ccc;
+   display: block;
+   width: 100%;
+    line-height:60px;
+    text-decoration: none;
+    padding-left: 40px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transition-property: background;
+
+}
+.sidebar a:hover{
+    background:#19b3d3 ;
+}
+sidebar i{
+    padding-right: 10px;
+
+}
+    </style>
+</head>
+<body>
+    
+  
+  <div class="topnav">
+    <div class="logo">
+      <p>Restaurant </p>
+    </div>
+  
+   
+  </div>
+  <div>
+      <!----sidebar start-->
+      <div class="sidebar">
+          <center>
+          <img src="{{chef.profile_pic.url}}" class="profile_image">
+          <h4> Chef</h4>
+      </center>
+      
+      
+      <a href="{% url 'chef-food-orders' %}"> <i class='fas fa-pizza-slice'></i> &emsp;<span>food  Orders(in)</span></a>
+
+      <a href="{% url 'chef-food-deliveries' %}"> <i style='font-size:px' class='fas'>&#xf805;</i> &emsp;<span>food  Deliveries</span></a>
+     
+      <a href="{% url 'chef-profile' %}"><i class="fa fa-user" aria-hidden="true"></i> &emsp;<span>Profile</span></a>
+      <a href="{% url 'chef-change-password' %}"><i class="fa fa-user" aria-hidden="true"></i> &emsp;<span>Change password</span></a>
+      <a href="{% url 'chef-logout' %}"><i class="fa fa-power-off" style="font-size:24px"></i> &emsp;<span>Logout</span></a>
+   
+
+     
+    </div><br><br>
+   
+</body>
+</html>

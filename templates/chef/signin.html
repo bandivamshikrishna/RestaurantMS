@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url(https://www.restaurant-hospitality.com/sites/restaurant-hospitality.com/files/styles/article_featured_retina/public/independent-restaurants-manager-log.jpg?itok=WeKGTdiW);
+}
+
+
+
+h1{
+    margin-top :150px;
+    font-style:  inherit;
+}
+    .container{
+    width: 300px;
+    height:300px;
+    background-color: white;
+    margin-left: 625px;
+   
+    border-radius: 10px;
+
+}
+.user,.pwd{
+    width: 150px;
+    padding: 10px;
+    margin: 15px;
+    border: 2px solid gray;
+    border-radius: 4px;
+  
+}
+button{
+
+    width: 100px;
+    padding: 10px;
+    background-color: darkgreen;
+    color: white;
+    border: none;
+    border-radius: 15px;
+   
+}
+a{
+    text-decoration: none;
+   
+}
+        
+
+    </style>
+</head>
+<body>
+    {% include 'core/navbar.html' %}
+      <div>
+
+   <div class="container">
+    <center> <h1><font size="8" color=" #ff9c24"> Log In</font></h1></center>
+    {{authform.non_field_errors}}
+    <form action="" method="POST" novalidate>
+        {% csrf_token %}
+        <input type="hidden" name="next" value={{ request.GET.next }}>
+       <center>{% render_field authform.username|attr:"required:true" class="user" placeholder="User Name" %}<br>
+        {{authform.username.errors}}
+       {% render_field authform.password|attr:"required:true" class="pwd" placeholder="Password" %}<br>
+       {{authform.password.errors}}
+       <button>Log in</button><br><br>
+       <a href="">forgot password</a> &emsp;&emsp;<a href="{% url 'customer-sign-up' %}">Create an account</a> </center>
+
+   </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+{% load i18n %}
+{% load static %}
+{% load widget_tweaks %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.container{
+    margin-left: 500px;
+    margin-top: 150px;
+    width: 500px;
+    height:500px;
+    background-color: ghostwhite;
+}
+label{
+    margin-left: 60px;
+    margin-top: 15px;
+
+}
+.table{
+    width:300px;
+    padding: 10px;
+    border: 2px solid gray;
+    border-radius: 6px;
+   margin-left: 50px;
+}
+h2{
+    margin-left: 50px;
+}
+.requried{
+    color:red;
+}
+ button{
+     margin-top:10px;
+    margin-left: 150px;
+    width: 100px;
+    padding: 10px;
+    background-color: green;
+    color:white;
+    border: none;
+    border-radius: 4px;
+}
+
+    select{
+        width: 315px;
+        padding: 10px;
+        margin-left: 50px;
+        border: 2px solid gray;
+        border-radius: 4px;
+    } 
+    .vDateField,.vTimeField{
+        width: 295px;
+        padding: 10px;
+        margin-left: 50px;
+        border: 2px solid gray;
+        border-radius: 4px;
+    }
+    .errorlist{
+            color:red;
+    }
+</style>
+<script type="text/javascript" src="{% url 'js-catalog' %}"></script>
+<script type="text/javascript" src="{% static '/admin/js/core.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static '/admin/css/widgets.css' %}">
+<style>.calendar>table>caption{caption-side:unset}</style><!--caption fix for bootstrap4-->
+{{ form.media }} 
+{{tableorderform.media}}
+
+</head>
+<body>
+    {% include 'customer/base.html' %}
+    
+    <div class="container"><br><br>
+        {{tableorderform.non_field_errors}}
+        <form action="" method="POST">
+            {% csrf_token %}
+        <label> Table Number:Table{{table.id}}</label><br>
+        {{tableorderform.table.errors}}
+        {{tableorderform.table}}<br><br>
+
+        <label>Seater:</label><br>
+        {{tableorderform.seater}}<br>
+
+        <label>Date:</label><br>
+        {{tableorderform.date.errors}}
+        {% render_field tableorderform.date|attr:"requried:true" class="vDateField" size="10"  %}<br><br>
+        <label for="time">Time:</label><br>
+        {{tableorderform.time.errors}}
+        {% render_field tableorderform.time|attr:"requried:true" class="vTimeField" size="8"  %}<br><br>
+      
+         
+        <button type="submit">Book a table</button>
+    </div>
+</div><br><br>
+    
+</form>
+</body>
+</html>

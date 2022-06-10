@@ -1,0 +1,385 @@
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    <title>Document</title>
+    <style>
+
+         
+    body {
+        margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+          background-image: url(https://images.unsplash.com/photo-1506521781263-d8422e82f27a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGFya2luZ3xlbnwwfHwwfHw%3D&w=1000&q=80);
+     }
+
+
+h1{
+    margin-top :150px ;
+}
+.container{
+    width: 500px;
+   position: relative;
+    background-color: ghostwhite;
+    margin-left: 500px;
+}
+.requried{
+    color:red;
+}
+h3{
+        margin-left: 20px;
+    }
+    input[type="radio"]{
+        margin-left: 20px;
+    }
+
+    #yes:checked ~ .yes
+{
+  display:block ;
+
+}
+
+    #yes1:checked ~ .yes1
+{
+  display:block ;
+
+}
+
+#yes2:checked ~ .yes2
+{
+  display:block ;
+
+}
+
+#yes3:checked ~ .yes3
+{
+  display:block ;
+
+}
+
+#yes4:checked ~ .yes4
+{
+  display:block ;
+
+}
+.select {
+  margin-left:-5px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 400px;
+  gap: 15px;
+}
+
+.select__item {
+    margin-left: 15px;
+  padding: 10px;
+  cursor: pointer;
+  font-family: "Heebo", sans-serif;
+  text-align: center;
+  border-radius: 3px;
+  background: #eeeeee;
+  border:2px solid green;
+  transition: background 0.1s;
+}
+
+.select__item--selected {
+  background: #009578;
+  color: #ffffff;
+}
+  
+.block{
+    margin-left: 40px;
+}
+.number{
+    width: 150 px;
+    padding: 15px;
+    margin-left: 45px;
+    border:none;
+    border-radius: 8px;
+
+}
+.fname,.lname{
+  width:150px;
+  margin-left: 70px;
+  padding: 8px;
+  border-radius: 10px;
+}
+a{
+  display: block;
+  width: 100px;
+  border: none;
+    padding: 10px;
+    background-color: green;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    border-radius: 8px;
+    margin-left: 30px;
+  
+}
+.previous{
+  margin-top: 50    px;
+}
+button{
+    margin: 25px;
+    width: 150px;
+    border: none;
+    padding: 10px;
+    background-color: green;
+    color: white;
+    border-radius: 8px;
+    margin-left: 300px;
+}
+
+  
+
+    </style>
+</head>
+<body>
+    <center> <h1><font size="8" color="red"> Parking Block</font></h1></center>
+    <div class="container"><br><br>
+        <h3> Do you want to book parking block:<span class="requried">*</span></h3>
+        <input type="radio" name="data" id="yes"> yes<br>
+        <input type="radio" name="data" id="no">  No<br><br>
+        <div class="yes" hidden >
+
+            <h3>Type of vehicle:<span class="requried">*</span></h3>
+        <input type="radio" id="yes1" name="wheel" value=" vehicle">2 wheel
+       <br>
+
+        <input type="radio" id="yes2" name="wheel" value=" vehicle"> 3 wheel
+        <br>
+
+        <input type="radio" id="yes3" name="wheel" value=" vehicle"> 4 wheel
+        <br><br>
+        
+        <div class="yes1" hidden>
+        <select name="language" class="custom-select" multiple>
+            <option value="A1">100</option>
+            <option value="A2">101</option>
+            <option value="A3">103</option>
+            <option value="B1">104</option>
+            <option value="B2">105</option>
+            <option value="B3">106</option></select>
+        </div>
+        <div class="yes2" hidden>
+            <select name="language" class="custom-select" multiple>
+                <option value="A1">150</option>
+                <option value="A2">151</option>
+                <option value="A3">152</option>
+                <option value="B1">153</option>
+                <option value="B2">154</option>
+                <option value="B3">155</option></select>
+            </div>
+            <div class="yes3" hidden>
+                <select name="language" class="custom-select" multiple>
+                    <option value="A1">600</option>
+                    <option value="A2">601</option>
+                    <option value="A3">602</option>
+                    <option value="B1">603</option>
+                    <option value="B2">604</option>
+                    <option value="B3">605</option></select>
+                </div>
+    </div>
+    <div class="yes1" hidden>
+    <h3>your vehicle number:</h3>
+    <input type="text" name="num" class=" number" placeholder="eg:Ts 28 DH 8148">
+
+</div>
+<div class= "yes2"  hidden>
+    <h3>your vehicle number:</h3>
+    <input type="text" name="num" class=" number" placeholder="eg:Ts 28 DH 8148">
+
+</div>
+<div class= "yes3" hidden>
+    <h3>your vehicle number:</h3>
+    <input type="text" name="num" class=" number" placeholder="eg:Ts 28 DH 8148">
+
+</div>
+
+<h3>Mode of payment:<span class="requried">*</span></h3>
+
+<input type="radio" name="data1" id="yes4"> <i style="font-size:18px" class="fa">&#xf09d;</i>&emsp;Debit or Credit card<br>
+<input type="radio" name="data1" id="no"><i style="font-size:24px" class="fa">&#xf015;</i>Offline<br><br>
+<div class="yes4" hidden>
+    <input type="text" name="fname"class="fname"  placeholder="first name" id="card"> <input type="text" name="lname" class="lname"  placeholder="last name" ><br><br>
+    <input type="num" name="num"class="fname"  placeholder="Credit Card Number" id="paypal"> <input type="cvv" name="cvv" class="lname"  placeholder="CVV" ><br><br>
+    <input type="num" name="num"class="fname"  placeholder="card expiration">
+</div>
+<div class="previous">
+<a href="file:///E:/Restaurant/google.html">Previous > </a>
+</div>
+<div>    
+  <button> submit</button>
+</div>
+
+
+            <script>
+                class CustomSelect {
+              constructor(originalSelect) {
+                this.originalSelect = originalSelect;
+                this.customSelect = document.createElement("div");
+                this.customSelect.classList.add("select");
+            
+                this.originalSelect.querySelectorAll("option").forEach((optionElement) => {
+                  const itemElement = document.createElement("div");
+            
+                  itemElement.classList.add("select__item");
+                  itemElement.textContent = optionElement.textContent;
+                  this.customSelect.appendChild(itemElement);
+            
+                  if (optionElement.selected) {
+                    this._select(itemElement);
+                  }
+            
+                  itemElement.addEventListener("click", () => {
+                    if (
+                      this.originalSelect.multiple &&
+                      itemElement.classList.contains("select__item--selected")
+                    ) {
+                      this._deselect(itemElement);
+                    } else {
+                      this._select(itemElement);
+                    }
+                  });
+                });
+            
+                this.originalSelect.insertAdjacentElement("afterend", this.customSelect);
+                this.originalSelect.style.display = "none";
+              }
+            
+              _select(itemElement) {
+                const index = Array.from(this.customSelect.children).indexOf(itemElement);
+            
+                if (!this.originalSelect.multiple) {
+                  this.customSelect.querySelectorAll(".select__item").forEach((el) => {
+                    el.classList.remove("select__item--selected");
+                  });
+                }
+            
+                this.originalSelect.querySelectorAll("option")[index].selected = true;
+                itemElement.classList.add("select__item--selected");
+              }
+            
+              _deselect(itemElement) {
+                const index = Array.from(this.customSelect.children).indexOf(itemElement);
+            
+                this.originalSelect.querySelectorAll("option")[index].selected = false;
+                itemElement.classList.remove("select__item--selected");
+              }
+            }
+            
+            document.querySelectorAll(".custom-select").forEach((selectElement) => {
+              new CustomSelect(selectElement);
+            });
+            
+            </script>
+            
+            
+</body>
+</html> {% endcomment %}
+
+
+
+
+<!DOCTYPE html>
+{% load widget_tweaks %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    <title>Document</title>
+    <style>
+
+         
+    body {
+        margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+          background-image: url(https://images.unsplash.com/photo-1506521781263-d8422e82f27a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGFya2luZ3xlbnwwfHwwfHw%3D&w=1000&q=80);
+          background-repeat: no-repeat;
+          background-size: cover;
+
+     }
+
+
+h1{
+    background-color: aliceblue;
+    margin-top :150px ;
+    width: 500px;
+    margin-left:500px ;
+}
+.container{
+    width: 500px;
+   position: relative;
+    background-color: ghostwhite;
+    margin-left: 500px;
+}
+.requried{
+    color:red;
+}
+h3{
+        margin-left: 20px;
+    }
+
+    input[type="radio"]{
+        margin-left: 20px;
+    }
+    .number{
+    width: 150 px;
+    padding: 15px;
+    margin-left: 45px;
+    border: 2px solid gray;
+    border-radius: 8px;
+
+}
+
+
+
+
+button{
+    margin: 25px;
+    width: 150px;
+    border: none;
+    padding: 10px;
+    background-color: green;
+    color: white;
+    border-radius: 8px;
+    margin-left: 150px;
+}
+
+
+  
+
+</style>
+</head>
+<body>
+     <h1><font size="8" color="red" > <center>Parking Block</center></font></h1>
+         <div class="container"><br><br>
+          <form action="" method="post">
+            {% csrf_token %}
+      
+            <h3>Type of vehicle:<span class="requried">*</span></h3>
+        <input type="radio" id="yes1" name="wheel" value=" 2 wheel vehicle" required="true" >2 wheel
+       <br>
+
+        <input type="radio" id="yes2" name="wheel" value=" 3 wheel vehicle" required="true"> 3 wheel
+        <br>
+
+        <input type="radio" id="yes3" name="wheel" value=" 4 wheel vehicle" required="true"> 4 wheel
+        <br><br>
+        <h3>your vehicle number:<span class="requried">*</span></h3>
+        {{parkingform.vehicle_number.errors}}
+        {% render_field parkingform.vehicle_number|attr:"required:true" class="number" placeholder="eg TS 28 DH 8148" %}
+  <button type="submit" >Submit</button>
+</form>
+  </div>
+  
+            
+</body>
+</html>

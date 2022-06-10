@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"content="width=device-width,intial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            
+body{margin:0px;}
+div{margin-top:200px;
+text-align:center}
+.btn{background-color:rgb(202, 92, 92);
+color:black;
+font-size: 20px;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+width:150px;
+height:50px}
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color:black;
+color: white;
+text-align: center;
+}
+
+        </style>
+    </head>
+  
+    <body>
+        <div>
+        <h1>Hello {{request.user|capfirst}}</h1>
+        <h2>your account has not been ACTIVATED yet!</h2>
+        <h3>Waiting for approval from the administrator</h3>
+        <h4>and soon younwill be able to access your Account after Approval!</h4>
+        <a href="{% url 'chef-logout' %}"><button type="button" class="btn">logout</button></a>
+        </div>
+    </body>
+</html>

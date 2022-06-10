@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+           body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: ghostwhite;
+}
+.container{
+    background-color: whitesmoke;
+    margin-left: 250px;
+    height:670px;
+    margin-top: 60px;
+    width: 1250px;
+    border-radius: 10px;
+    box-shadow:4px;
+
+}
+
+h1{
+   height: 35x;
+   width: 1000px;
+   background-color:gold;
+   color: white;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  border-color: black;
+}
+th {
+  background-color: darkgray;
+}
+    </style>
+</head>
+<body>
+</div>
+{% include 'admin/base.html' %}
+<div class="container"><br><br><br><br><br><br>
+<center><h1> Parking Details</h1></center>
+<table border="1" height="200" width="1000" align="center" >
+<tr align="center" background-color="blue">
+    <th >s.no</th>  <th>Vechicle</th>   <th>Vechicle Number </th>  <th>date</th><th>Time</th>   <th>Block</th>  
+</tr>
+{% for food in foodorders %}
+{% if food.parking %}
+<tr align="center" >
+    <td>{{forloop.counter}}</td>  <td>{{food.parking.vehicle_type}}</td>   <td>{{food.parking.vehicle_number}}</td>  <td>{{food.table.date}}</td> <td>{{food.table.time}}</td>  <td>{{food.parking.block}}</td>  
+</tr>
+{% endif %}
+{% endfor %}
+<table>
+</div>
+</body>
+</html>

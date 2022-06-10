@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+           body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: ghostwhite;
+}
+.container{
+    background-color: whitesmoke;
+    margin-left: 250px;
+    height:670px;
+    margin-top: 60px;
+    width: 1250px;
+    border-radius: 10px;
+    box-shadow:4px;
+
+}
+h1{
+   height: 35x;
+   width: 1000px;
+   background-color:gold;
+   color: white;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  border-color: black;
+}
+th {
+  background-color: darkgray;
+}
+    </style>
+</head>
+<body>
+{% include 'admin/base.html' %}
+<div class="container"><br><br><br><br><br><br>
+<center><h1> Table Orders</h1></center>
+<table border="1" height="200" width="1000" align="center" >
+<tr align="center" background-color="blue">
+    <th >s.no</th>  <th>Table Number</th>  <th>date</th> <th>Time</th>
+</tr>
+{% for table in tableorders %}
+<tr align="center" >
+    <td>{{forloop.counter}}</td>  <td>TB {{table.table.id}}</td>   <td>{{table.date}}</td> <td>{{table.time}}</td>
+</tr>
+{% endfor %}
+<table>
+</div>
+</body>
+</html>

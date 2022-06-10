@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+    {% render_field foodform.food %}<br><br>
+    {% render_field foodform.food_quantity %}<br><br>
+    {% render_field foodform.address1 %}<br><br>
+    {% render_field foodform.address2 %}<br><br>
+    {% render_field foodform.city %}<br><br>
+    {% render_field foodform.state %}<br><br>
+    {% render_field foodform.pincode %}<br><br>
+    <input type="submit" value="Update Food">
+</form>
+</body>
+</html>

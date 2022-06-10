@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+         body {
+            
+               margin: 0;
+               font-family: Arial, Helvetica, sans-serif;
+               background-color: ghostwhite;
+             
+             }
+h1{
+    margin-top :150px ;
+}
+p{
+    margin-left: 200px;
+}
+img{
+  margin-left: 100px;
+}
+.rating{
+  margin-top: 10px;
+  margin-left: 100px;
+}
+.img1{
+  margin-left: 380px;
+  margin-top: -330px;
+  cursor: not-allowed;
+}
+
+.rating1{
+  margin-top: 10px;
+  margin-left: 480px;
+}
+.img2{
+  margin-left: 380px;
+  margin-top: -300px;
+}
+.img3{
+  margin-left: 5px;
+  cursor: not-allowed;
+
+}
+.checked {
+  color: orange;
+}
+    </style>
+</head>
+<body>
+    {% include 'core/navbar.html' %}
+      <div>
+     <center> <h1><font size="8" color="red"> RESERVE</font></h1></center><br><br>
+  <a href="{% url 'customer-reserve-table' %}" >
+       <img src="https://media.istockphoto.com/photos/empty-table-at-a-restaurant-picture-id1160805942?b=1&k=20&m=1160805942&s=170667a&w=0&h=KrgVDrZetThO_xOGvK9UDTxfMpB3jL4j0FGqKDiIRiA="  height="300px" ></a>
+     <div class="rating">
+       <span class="fa fa-star checked"></span>
+       <span class="fa fa-star checked"></span>
+       <span class="fa fa-star checked"></span>
+       <span class="fa fa-star checked"></span>
+       <span class="fa fa-star checked"></span>
+      </div>
+       <div class="img1">
+       <a href="{% url 'customer-reserve-table' %}"  class="img1" >
+        <img src="https://www.webstaurantstore.com/uploads/seo_category/2019/5/rectangular-table-tops.jpg"  height="300px" ></a>
+    
+    <div class="rating1">
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star "></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+     </div>
+    </div><br><br><br>
+    <div class="img3">
+    <a href="{% url 'customer-reserve-table' %}" >
+        <img src="https://www.decormorehospitality.com/v/vspfiles/photos/02-PLANK-BLACK-WALNUT-T20P-2T.jpg" width="33%" height="300px" ></a>
+         
+    <div class="rating">
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+     </div>
+      </div>
+        <div class="img2">
+            <a href="{% url 'customer-reserve-table' %}"  class="img2" >
+             <img src="https://www.webstaurantstore.com/uploads/seo_category/2019/5/rectangular-table-tops.jpg" height="300px" ></a>
+             
+    <div class="rating1">
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star "></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+     </div>
+         </div><br>
+         
+       </div> 
+        
+   
+</body>
+</html>

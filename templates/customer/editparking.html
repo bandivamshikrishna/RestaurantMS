@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+          
+          }
+          .container{
+            margin-left:500px;
+            margin-top: 150px;
+            width: 500px;
+            height:400px;
+            background-color: ghostwhite;
+        }
+        .requried{
+            color:red;
+        }
+        h3{
+                margin-left: 20px;
+            }
+        
+            input[type="radio"]{
+                margin-left: 20px;
+            }
+            .number{
+            width: 150 px;
+            padding: 15px;
+            margin-left: 45px;
+            border: 2px solid gray;
+            border-radius: 8px;
+        
+        }
+        
+        
+        
+        
+        input[type=submit]{
+            margin: 25px;
+            width: 150px;
+            border: none;
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border-radius: 8px;
+            margin-left: 150px;
+        }
+        input[type=text]{
+            margin-left:20px;
+            padding:10px;
+            border:2px solid gray;
+            border-radius:4px;
+        }
+        
+    </style>
+</head>
+<body>
+   
+    <div class="container"><br><br>
+        <form action="" method="post">
+            {% csrf_token %}
+    <h3>Type of vehicle:<span class="requried">*</span></h3>
+    <input type="radio" id="yes1" name="wheel" value=" 2 wheel vehicle" required="true" >2 wheel
+   <br>
+
+    <input type="radio" id="yes2" name="wheel" value=" 3 wheel vehicle" required="true"> 3 wheel
+    <br>
+
+    <input type="radio" id="yes3" name="wheel" value=" 4 wheel vehicle" required="true"> 4 wheel
+    <br><br>
+    <h3>your vehicle number:<span class="requried">*</span></h3>
+
+    {% render_field parkingform.vehicle_number %}<br><br>
+
+    <input type="submit" value="Update parking">
+</form>
+    </div>
+</body>
+</html>

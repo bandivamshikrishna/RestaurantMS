@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+{% load static %}
+{% load widget_tweaks %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>ufh</title>
+    <style>
+      
+      
+     .container{
+         margin-top:150px;
+         background-color:ghostwhite;
+         width:750px;
+      
+         margin-left:500px;
+
+     }
+     select{
+         margin-top:10px;
+         margin-left:25px;
+         width:200px;
+         padding:5px;
+         border-radius:10px;
+     }
+     input[type=submit]{
+         margin-left:50px;
+         width:150px;
+        padding:5px;     }
+        input.larger {
+            margin-top: 20px;
+            margin-left: 50px;
+                width: 25px;
+                height: 25px;
+              }
+              .img1{
+                  margin-left: 50px;
+                  margin-top: -25px;
+              }
+    
+        .qty{
+            margin-left: 200px;
+        }
+        h4{
+            margin-top:-5px;
+            margin-left:50px;
+        }
+     .check{
+         margin-left:75px;
+        
+         width:25px;
+         height:25px;
+     }
+      .check-box{
+       margin-top:50px;
+    
+      }
+          
+      .rupee{
+          margin-left:375px;
+          color:blue;
+      }
+      .qty1{
+          margin-top:-10px;
+         
+          width:50px;
+      }
+      
+.addr{
+  margin-left: 18px;
+}
+.address{
+  margin-left: 18px;
+  padding:15px;
+  border: 2px solid gray;
+   
+  border-radius:10px ;
+  width:620px
+}
+.city,.state{
+  margin-left: 18px;
+  padding:15px;
+  border: 2px solid gray;
+   
+  border-radius:10px ;
+  
+  width:280px
+
+}
+
+
+    </style>
+</head>
+<body>
+  {% include 'customer/base.html' %}
+    
+    {{reservefoodform.non_field_errors}}
+    {{foodorderform.non_field_errors}}
+   <div class="container">
+       <form action="" method="POST" novalidate>
+           {% csrf_token %}
+           {{reservefoodform.food_type.errors}}
+    {% render_field reservefoodform.food_type %}
+        <input type="submit" value="search"><br>
+    </form>
+
+
+    <form action="" method="POST" novalidate>
+        {% csrf_token %}
+        <div>
+                {% for f in food %}
+               
+               <div class="check-box">
+              {% comment %} {% render_field foodorderform.checked|attr:"required:false" class="check" %} {% endcomment %}
+               <input type="checkbox" name="checks[]" id="" value="{{f.name}}" required="false" class="check">
+            </div>
+            <div class="rupee">
+                <i style="font-size:18px" class="fa">&#xf156;</i>{{f.price}}
+            </div>
+               <div class="img1">
+               <img src="{{f.food_pic.url}}" alt="Nothing" class="img1" width="100px" height="100px"> 
+               <h4>{{f.name}}  </h4>
+               Food_Quantity:<br><br>
+               
+             {% render_field foodorderform.food_quantity|attr:"required:false" class="qty1" %}
+             <select name="food_quantity[]" required="false" id="" class="qty1">
+                <option value="" selected>---------</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+              </select>
+               
+               </div>
+           
+                  {% endfor %}
+                </div>
+                
+<label class="addr">Address</label><span class=requried>*</span><br><br>
+{% render_field foodaddressform.address1|attr:"required:true" class="address" placeholder="street address line 1" %}<br><br>
+{% render_field foodaddressform.address2|attr:"requried:true" class="address" placeholder="street address line 2" %}<br><br>
+
+{% render_field foodaddressform.city|attr:"required:true" class="city" placeholder="city" %}
+{% render_field foodaddressform.state|attr:"required:true" class="state" placeholder="state/province"%}<br><br>
+{% render_field foodaddressform.pincode|attr:"required:true" class="address" placeholder="postal/zip code" %}<br><br>
+
+           
+<center><input type="submit" value="Submit"></center>
+        </form>
+   </div>
+
+</body>
+</html> 

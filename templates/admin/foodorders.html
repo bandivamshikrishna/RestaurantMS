@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+           body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: ghostwhite;
+}
+.container{
+    background-color: whitesmoke;
+    margin-left: 250px;
+    height:670px;
+    margin-top: 60px;
+    width: 1250px;
+    border-radius: 10px;
+    box-shadow:4px;
+
+}
+        
+h1{
+   height: 35x;
+   width: 1000px;
+   background-color: gold;
+   color: white;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  border-color: black;
+}
+th {
+  background-color: darkgray;
+}
+a{
+    text-decoration: none;
+}
+    </style>
+</head>
+<body>
+    {% include 'admin/base.html' %}
+<div class="container"><br><br><br><br><br><br>
+<center><h1> Food Orders</h1></center>
+<table border="1" height="200" width="1000" align="center" >
+<tr align="center" background-color="blue">
+    <th >s.no</th>  <th>image</th>   <th>Food </th>  <th>Qunatity</th>  <th>Table</th> <th>date</th> <th>time</th>
+</tr>
+{% for food in foodorders %}
+{% if food.table %}
+<tr align="center" >
+    <td>{{forloop.counter}}</td>  <td><img src="{{food.food.food_pic.url}}" width="50" height="50"></td>   <td>{{food}}</td>  <td>{{food.food_quantity}}</td> <td>table no: {{food.table.table.id}}</td> <td>{{food.table.date}}</td> <td>{{food.table.time}}</td>
+</tr>
+{% endif %}
+{% endfor %}
+<table>
+</div>
+</body>
+</html>

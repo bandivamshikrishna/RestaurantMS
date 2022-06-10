@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+
+    <link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  
+   
+    <title>Document</title>
+   <style>
+         body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: ghostwhite;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color:  #2c3e50;
+  position:fixed;
+  width:100%;
+}
+
+.topnav button{
+  float: right;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  margin-right: 50px;
+  border: none;
+  margin:10px;
+  border-radius: 8px;
+}
+
+
+.topnav .logo{
+  font-size:20px;
+  font-weight: Bold;
+ 
+}
+.topnav .logo p{
+  float:left;
+  color:white;
+  text-transform: uppercase;
+  margin-top:15px;
+  margin-left: 35px;
+}
+.sidebar{
+    background-color: #2c3e50;
+    margin-top:70px;
+    position: fixed;
+    left:0;
+    width:250px;
+    margin-top: 45px;
+    height:100%;
+}
+.sidebar .profile_image{
+    width: 100px;
+    height: 100px;
+    margin-top: 40px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+
+}
+.sidebar h4{
+    color:#ccc;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.sidebar a{
+   color:#ccc;
+   display: block;
+   width: 100%;
+    line-height:60px;
+    text-decoration: none;
+    padding-left: 40px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transition-property: background;
+
+}
+.sidebar a:hover{
+    background:#19b3d3 ;
+}
+sidebar i{
+    padding-right: 10px;
+
+}
+    </style>
+</head>
+<body>
+    
+  
+  <div class="topnav">
+    <div class="logo">
+      <p>Restaurant </p>
+    </div>
+ 
+   
+  </div>
+  <div>
+      <!----sidebar start-->
+      <div class="sidebar">
+          {% comment %} <center>
+          <img src="C:\Users\boyaa\Downloads\admin.jpeg" class="profile_image"> 
+          <h4> Admin</h4> {% endcomment %}
+      </center>
+      <a href="{% url 'admin-add-table' %}"><i class="fa fa-table"></i> &emsp;<span>Add Table</span></a> 
+      <a href="{% url 'admin-add-food' %}"><i class="fa fa-table"></i> &emsp;<span>Add Food</span></a> 
+      <a href="{% url 'admin-table-orders' %}"><i class="fa fa-table"></i> &emsp;<span>Table  Orders</span></a> 
+      <a href="{% url 'admin-food-orders' %}"> <i class='fas fa-pizza-slice'></i> &emsp;<span>food  Orders(In)</span></a>
+      <a href="{% url 'admin-food-deliveries' %}"><i style='font-size:px' class='fas'>&#xf805;</i> &emsp;<span>food  Deliveries</span></a>
+    
+      <a href="{% url 'admin-pending-chef' %}">&emsp;<span> Pending Chef Details</span></a>
+      <a href="{% url 'admin-approved-chef' %}"> &emsp;<span> Aproved Chef Details</span></a>
+      <a href="{% url 'admin-parking-details' %}"><i class='fas fa-parking'></i><span>Parking Details</span></a>
+      <a href="{% url 'admin-logout' %}"><i class="fa fa-power-off" style="font-size:24px"></i> &emsp;<span>Logout</span></a>
+   
+    </div>
+  <br><br>
+   
+
+</body>
+</html>

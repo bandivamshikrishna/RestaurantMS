@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: ghostwhite;
+}
+.container{
+    background-color: whitesmoke;
+    margin-left: 320px;
+    height:350px;
+    margin-top: 150px;
+    width: 1000px;
+    border-radius: 10px;
+    box-shadow:4px;
+
+}
+h1{
+   height: 45x;
+   width: 1000px;
+   background-color:green;
+   color: white;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  border-color: black;
+}
+th {
+  background-color: darkgray;
+}
+a{
+    text-decoration: none;
+}
+    </style>
+</head>
+<body>
+    {% include 'customer/base.html' %}
+<div class="container"><br>
+    <center><h1> Food successful</h1></center>
+    <table border="1" height="200" width="1000" align="center" >
+    <tr align="center" background-color="blue">
+        <th >s.no</th>  <th>Food Items</th>   <th>Food Quantity</th>  <th>Price</th>  <th>Edit</th> <th> cancel</th>
+    </tr>
+    {% for food in foodorders %}
+    <tr align="center" >
+        <td>{{forloop.counter}}</td>  
+
+        <td>{{food}}</td> 
+
+        <td>{{food.food_quantity}}</td>
+
+        <td>{{food.total_price}}</td> 
+
+        <td> <a href="{% url 'customer-food-edit' food.id %}" > Edit</a></td>
+
+        <td> <a href="{% url 'customer-food-cancel' food.id %}"> Cancel</a></td>
+
+    </tr>
+    {% endfor %}
+    <table>
+    </div>
+    Total Price: {{total_price}}
+    
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Document</title>
+  <style>
+    body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: ghostwhite;
+}
+.topnav {
+  overflow: hidden;
+  background-color: azure;
+  position:fixed;
+  width:100%;
+  margin-top:-150px;
+}
+
+.topnav a {
+  float: right;
+  color:orange;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+  border-radius: 10px;
+}
+.topnav .logo{
+  font-size:20px;
+  font-weight: Bold;
+ 
+}
+.topnav .logo p{
+  float:left;
+  color:green;
+  text-transform: uppercase;
+  margin-top:15px;
+  margin-left: 15px;
+}
+
+
+
+img{
+  margin-top: 100px;
+  margin-left: 50px;
+  border-radius: 18px;
+  border: 5px;
+}
+h1{
+  margin-top: -380px;
+  margin-left: 980px;
+  color: red;
+}
+.para{
+  margin-left:850px;
+}
+
+
+ p{
+   margin-left:50px;
+   margin-top:120px;
+ }
+ .checked {
+  color: orange;
+}
+.rating1{
+  margin-left: 200px;
+}
+.rating2{
+  margin-left: 550px;
+  margin-top: -100px;
+}
+.rating3{
+  margin-left: 1000px;
+  margin-top: -100px;
+}
+.a{
+
+  
+  font-weight: 900;
+  font-size: 25px;
+  margin-top: 10px;
+  margin-left: -400px;
+}
+a{
+  text-decoration: none;
+  color: green;
+}
+  </style>
+</head>
+<body>  
+  <div class="topnav">
+    <div class="logo">
+      <p>Restaurant</p>
+    </div>
+    <a href="{% url 'customer-sign-in' %}">Log in</a>
+    <a  href="">Contact Us</a>
+    <a  href="{% url 'tablebooking' %}">Reservation</a>
+ 
+    <a href="{% url 'chef-sign-up' %}">Vacancies</a>
+    <a href="{% url 'menu' %}">Menu</a>
+    <a href="{% url 'about' %}">About</a>
+    <a href="{% url 'home' %}">home</a>
+  </div>
+  
+  <div> 
+  <img src="https://media.istockphoto.com/photos/modern-restaurant-interior-design-picture-id1211547141?s=612x612" width="50%" height="400px" >
+  <h1>"Our Story"</h1>
+  <p class="para"> Inspired by travel and a passion for different cultures,<br><br> VICE-FAMILY RESTAURANT has a vast menu of culinary delights,<br> <br>utilizing the freshest ingredients to bring homemade dishes straight<br><br> to your table Come dine with us today.</p>
+
+ <p> The Best There Is<br><br>
+
+  Our parent brand, being one of the oldest and trusted restaurant's of Hyderabad,<br><br>the Grand Hotel at Abids is where our menu and our top chefs come from, with an experience of 85 years in cooking and hospitality.<br><br>So you can expect, simply the best.
+  As of 2020,<br><br> we have 9 branches all over the city of Hyderabad, and you'll receive the same service and the family experience whenever you feel hungry.<br><br> Just search for us, and we'll be at the right place.</p>
+  
+  <br><br>
+  <center><h2><font size="8" color="green">TESTMONIALS</font></h2></center><br>
+  
+          
+  <div class="rating1">
+    {% for rating in rating1_rating %}
+      <span class="fa fa-star checked"></span>
+    {% endfor %}
+    
+    <br><br>
+    {{rating1.data|linebreaksbr}}
+   </div>
+       
+   <div class="rating2">
+      {% for rating in rating2_rating %}
+      <span class="fa fa-star checked"></span>
+      {% endfor %}
+
+    
+    <br><br>
+    {{rating2.data|linebreaksbr}}
+   </div>
+        
+   <div class="rating3">
+    {% for rating in rating3_rating %}
+    <span class="fa fa-star checked"></span>
+    {% endfor %}
+    <br><br>
+    {{rating3.data|linebreaksbr}}<br><br>
+    <div class="a">
+    <a href="{% url 'review' %}">Write Review</a>
+  </div>
+   </div>
+   <hr>
+
+
+</div> 
+<center><h4><font size="8" color="#d90026">Gallary</font></h4></center><br>
+<center><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt-4TkThnebrlU2_PQ48X89iBqmYOuCWP60w&usqp=CAU" width="200" height="300"> <img src="https://lh3.googleusercontent.com/vkuUei0_ox4nTdd51Z6AZKiJBmIrcIQgaWj_MSOGBs6RN1ASCQ0CqmIws8eX7puNY_pmv6t2y0V-czDEISXEY30uR-M=w1000"  width="200" height="300"> <img src="https://i.insider.com/536d34a4ecad046b153e69bc?width=700"  width="200" height="300">  <img src="https://media.npr.org/assets/img/2016/06/27/undefined-c9716b2dec58ce83ad3c4055ef51982f41274381-s800-c85.jpg"  width="200" height="300"><br>
+<img src="https://3390327.fs1.hubspotusercontent-na1.net/hubfs/3390327/hss-kitchen-workers-1536x972-jpg.jpeg"  width="200" height="300"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf_fJCVJSiaCXeqXa3-X3PvcS9oLMuF_Alig&usqp=CAU"  width="200" height="300"> <img src="https://getsling.com/wp-content/uploads/2019/11/pasted-image-0-18.png" width="200" height="300"> <img src="https://www.princess.com/images/global/ships-and-experience/food-and-dining/specialty-dining/sterling-steakhouse.jpg"  width="200" height="300"><br><br><br>
+</center>
+
+  </body>
+</html>

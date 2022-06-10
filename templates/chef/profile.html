@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: ghostwhite;
+}
+.container{
+    background-color: whitesmoke;
+    margin-left: 250px;
+    height:670px;
+    margin-top: 60px;
+    width: 1250px;
+    border-radius: 10px;
+    box-shadow:4px;
+
+}
+h1{
+    margin-top: 0px;
+    color:red;
+}
+.container{
+    background-color: whitesmoke;
+    margin-left: 250px;
+    height:670px;
+    margin-top: 60px;
+    width: 1280px;
+    border-radius: 10px;
+    box-shadow:4px;
+
+}
+.img1{
+    margin-top: -45px;
+    margin-left: 170px;
+}
+h3{
+    margin-left: 130px;
+   
+}
+.fname{
+    margin-left: 700px;
+    margin-top: -38px;
+}
+.edit-profile{
+    display: block;
+    width: 100px;
+    background-color: orange;
+    color: white;
+    text-align: center;
+   
+    margin-top: 25px;
+    padding: 10px;
+    border-radius: 4px;
+    margin-left: 130px;
+}
+.edit-profile{
+    text-decoration:none;
+}
+    </style>
+</head>
+
+<body>
+   {% include 'chef/base.html' with chef=request.user.chef %}
+    <div class="container"><br>
+        <center><h1> Profile</h1></center><br><br>
+      <div><img src="{{chef.profile_pic.url}}" class="img1" width="100px" height="100px"></div>
+      <br>
+      <hr>
+      <h3>First Name</h3> <div class="fname"><label>{{user.first_name}} </label></div><br>
+      <h3>Last Name</h3> <div class="fname"><label>{{user.last_name}} </label></div><br>
+      <h3>Mobile number</h3> <div class="fname"><label>{{chef.mobile_number}} </label></div><br>
+      <h3>E mail</h3> <div class="fname"><label>{{user.email}}</label></div><br>
+      
+    
+    <a href="{% url 'chef-edit-profile' %}"><button type="submit" class="edit-profile">Edit Profile</button></a>
+   
+    
+    </div>
+    
+</body>
+</html>
