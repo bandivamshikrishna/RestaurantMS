@@ -55,11 +55,14 @@ h2{
 <body>
     {% include 'customer/base.html' %}
     <div class="container"><br><br>
+        <center><font size="4" color="green">
         The Table :{{table.table.id}} is successfully booked.<br>
         with the food Items<br><br>
         {% for food in foodorder %}
             {{food}} with quantity :{{food.food_quantity}}<br>
         {% endfor %}
+        </font>
+        </center>
         <h2> Do you want to Reserve Parking :<span class="requried">*</span></h2>
         <a href="{% url 'customer-parking' %}"><button type="submit" class="yes">Yes</button></a>    <a href="{% url 'customer-table-food-booked-mail' %}"><button type="submit"  class="no" >No</button></a>
 

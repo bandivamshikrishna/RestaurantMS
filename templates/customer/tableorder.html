@@ -81,9 +81,11 @@ h2{
         <label> Table Number:Table{{table.id}}</label><br>
         {{tableorderform.table.errors}}
         {{tableorderform.table}}<br><br>
+        {% comment %} {% render_field tableorderform.table|attr:"disabled" %}<br>  {% endcomment %}
 
         <label>Seater:</label><br>
-        {{tableorderform.seater}}<br>
+        {% render_field tableorderform.seater %}<br> 
+        {% comment %} {{tableorderform.seater disabled}}<br> {% endcomment %}
 
         <label>Date:</label><br>
         {{tableorderform.date.errors}}

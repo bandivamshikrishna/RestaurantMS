@@ -9,6 +9,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: ghostwhite;
+          }
+        
+        .container{
+            background-color: whitesmoke;
+            margin-left: 250px;
+            height:500px;
+            margin-top: 125px;
+            width: 1250px;
+            border-radius: 10px;
+            box-shadow:4px;
+        
+        }    
         
 h1{
    height: 35x;
@@ -32,7 +48,7 @@ a{
 <body>
     {% include 'chef/base.html' with chef=request.user.chef %}
 <div class="container">
-<center><h1> Food Orders</h1></center>
+<center><h1> Food Deliveries</h1></center>
 <table border="1" height="200" width="800" align="center" >
     
 <tr align="center" background-color="blue">

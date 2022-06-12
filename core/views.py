@@ -7,7 +7,7 @@ from customer.models import FoodOrder,TableOrder
 from .forms import ReserveFoodForm, ReserveTableForm,RatingForm
 from chef.models import Chef
 from django.contrib.auth.models import User
-from .models import Rating
+from .models import Rating,ReserveTable
 
 # Create your views here.
 
@@ -56,7 +56,8 @@ def menu(request):
 
 
 def table_booking(request):
-    return render(request,'core/tablebooking.html')
+    tables=ReserveTable.objects.all()
+    return render(request,'core/tablebooking.html',{'tables':tables})
 
 
 def is_customer(user):

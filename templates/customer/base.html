@@ -12,6 +12,7 @@
     background-color: #2c2c2c;
    position: fixed;
     width:100%;
+    margin-left:-8px;
     margin-top:-150px;
   }
   
@@ -36,7 +37,7 @@
   }
   .topnav .logo p{
     float:left;
-    color:green;
+    color:white;
     text-transform: uppercase;
     margin-top:15px;
     margin-left: 15px;
@@ -51,10 +52,10 @@
     </div>
     <a  href="{% url 'customer-logout' %}">Log Out</a>
     <a href="{% url 'customer-change-password' %}">Change password</a>
-    <a href="{% url 'customer-profile' %}">Profile</a>
-    <a href="{% url 'customer-reserve-table' %}">Reserve Table</a>
-    <a href="{% url 'customer-food-delivery' %}">Food delivery</a>
     <a href="{% url 'customer-table-acknowledgement' %}">Table acknowlegement</a>
+    <a href="{% url 'customer-food-delivery' %}">Food delivery</a>
+    <a href="{% url 'customer-reserve-table' %}">Reserve Table</a>
+    <a href="{% url 'customer-profile' %}">Profile</a>
   </div>
   </body>
   </html>

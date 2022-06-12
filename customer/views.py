@@ -36,7 +36,7 @@ def customer_sign_up(request):
             Now u can enjoy all features of our restaturant which is provided by us you can order the food Online, 
             Reserve the table along the food in particular time and with selected guest and also here we are 
             providing the booking to park the vehicle.'''
-            send_mail(subject,message,settings.EMAIL_HOST_USER,[email])
+            send_mail(subject,message,settings.EMAIL_HOST_USER,[email],fail_silently=True)
             return HttpResponseRedirect('/customer/signin/')
     else:
         customer_form=CustomerForm()
@@ -136,7 +136,7 @@ def customer_food_delivery(request):
                 we will deliver the food to your location '''+food_address1+''' '''+food_address2+''' in time 
                 Enjoy our delicious food .
                 '''
-                send_mail(subject,message,settings.EMAIL_HOST_USER,[request.user.email])
+                send_mail(subject,message,settings.EMAIL_HOST_USER,[request.user.email],fail_silently=True)
                 return HttpResponseRedirect('/customer/payment/')
     else:
         reserve_food_form=ReserveFoodOrderForm()
@@ -436,7 +436,7 @@ def customer_parking(request):
                 The block number '''+str(block)+''' is reserved for your parking.
                 Enjoy our delicious food .
                 '''
-                send_mail(subject,message,settings.EMAIL_HOST_USER,[request.user.email])
+                send_mail(subject,message,settings.EMAIL_HOST_USER,[request.user.email],fail_silently=True)
             return HttpResponseRedirect('/customer/payment/')
     else:  
         parking_form=ParkingForm()
