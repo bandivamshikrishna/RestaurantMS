@@ -59,6 +59,9 @@ def table_booking(request):
     tables=ReserveTable.objects.all()
     return render(request,'core/tablebooking.html',{'tables':tables})
 
+def contact_us(request):
+    return render(request,'core/contactus.html')
+
 
 def is_customer(user):
     return user.groups.filter(name='CUSTOMER').exists()

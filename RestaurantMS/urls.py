@@ -27,6 +27,7 @@ urlpatterns = [
     path('review/',views.review,name='review'),
     path('menu/',views.menu,name='menu'),
     path('tablebooking/',views.table_booking,name='tablebooking'),
+    path('contactus/',views.contact_us,name='contactus'),
     path('afterlogin/',views.afterlogin,name='afterlogin'),
     path('jsiq87/',JavaScriptCatalog.as_view(),name='js-catalog'),
 
