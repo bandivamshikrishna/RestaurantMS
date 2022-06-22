@@ -18,7 +18,7 @@ body {
  
 }
 .rating-css {
-  height: 250px;
+  height: 450px;
   width: 400px;
   background: ghostwhite;
   border: 4px solid #838383;
@@ -61,20 +61,24 @@ button{
     margin-left: 10px;
 }
 .cancel{
-    width: 150px;
-    padding: 10px;
-    background-color:orange;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    margin-left: 20px;
+  background-color: orange;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-size:5px;
+}
+
+
+
+a{
+  text-decoration:none;
 }
 
   </style>
 </head>
 
 <body>
-
   <div class="rating-css">
     <form action="" method="post">
       {% csrf_token %}
@@ -94,7 +98,7 @@ button{
       {% render_field form.data|attr:"required:true" %}
       
 
-      <button type="submit" class="cancel">Cancel</button>    <button type="submit">Post</button> 
+     <a href="{% url 'about' %}" class="cancel">cancel</a>   <button type="submit">Post</button> 
     </form>
     </div>
 
