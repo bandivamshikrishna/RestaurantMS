@@ -22,10 +22,10 @@
             box-shadow:4px;
         
         }
-.add-food{
+select{
 
 margin-left: 400px;
-width: 350px;
+width: 395px;
 padding: 10px;
 border: 2px solid gray;
 border-radius: 4px;
@@ -42,6 +42,14 @@ border-radius: 4px;
     color:white;
     padding: 10px;
     border: none;
+    border-radius: 4px;
+}
+.add-food{
+   
+    margin-left: 400px;
+    width: 370px;
+    padding: 10px;
+    border: 2px solid gray;
     border-radius: 4px;
 }
 
@@ -63,7 +71,7 @@ label{
 <label> Food Name </label><br>
 {% render_field foodform.name|attr:"required:true" class="add-food" %} <br><br>
 <label> Food Type </label><br>
-{% render_field foodform.food_type|attr:"required:true" class="add-food" %} <br><br>
+{% render_field foodform.food_type|attr:"required:true" %} <br><br>
 
 <label> Price </label><br>
 {% render_field foodform.price|attr:"required:true" class="add-food" %} <br><br>

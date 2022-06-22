@@ -82,8 +82,8 @@ button{
    <h4> Total Price :{{total_price}} </h4>
    <form action="" method="post">
        {% csrf_token %}
-<input type="radio" name="data1" id="yes4"> <i style="font-size:18px"  required=true  class="fa">&#xf09d;</i>&emsp;Debit or Credit card<br>
-<input type="radio" name="data2" id="no">&ensp;<i style="font-size:24px" required=true  class="fa">&#xf0d6;</i>&ensp;Cash <br><br>
+<input type="radio" id="yes4" name="fav_language" value="HTML"> <i style="font-size:18px"  required=true  class="fa">&#xf09d;</i>&emsp;Debit or Credit card<br>
+<input type="radio" id="css" name="fav_language" value="CSS">&ensp;<i style="font-size:24px" required=true  class="fa">&#xf0d6;</i>&ensp;Cash <br><br>
 <div class="yes4" hidden>
     <input type="text" name="fname"class="fname"    placeholder="first name" id="card"> <input type="text" name="lname"   class="lname"  placeholder="last name" ><br><br>
     <input type="num" name="num"class="fname"   placeholder="Credit Card Number" id="paypal"> <input type="cvv" name="cvv"   class="lname"  placeholder="CVV" ><br><br>

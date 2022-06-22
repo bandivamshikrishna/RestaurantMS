@@ -31,6 +31,16 @@ h2,h3{
     margin-left: 300px;
     margin-top: -38px;
 }
+.edit{
+    width:100px;
+    padding:10px;
+    background-color:blue;
+    color:white;
+    border:none;
+    border-radius:4px;
+    display:inline-block;
+    text-decoration:none;
+}
 
     </style>
 </head>
@@ -45,9 +55,9 @@ h2,h3{
       <h3>First Name</h3> <div class="fname"><label>{{user.first_name}} </label></div>
       <h3>Last Name</h3> <div class="fname"><label>{{user.last_name}} </label></div>
       <h3>Mobile number</h3> <div class="fname"><label>{{customer.mobile_number}} </label></div>
-      <h3>E mail</h3> <div class="fname"><label>{{user.email}} </label></div>
+      <h3>E mail</h3> <div class="fname"><label>{{user.email}} </label></div><br><br>
     
-    <center><a href="{% url 'customer-edit-profile' %}">Edit Profile</a></center>
+    <center><a href="{% url 'customer-edit-profile' %}" class="edit"> Edit Profile </a></center>
     
     
     </div>

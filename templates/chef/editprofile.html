@@ -21,6 +21,10 @@
             box-shadow:4px;
         
         }
+        .orange{
+            background-color:orange;
+        }
+        
         label{
             margin-left: 100px;
             margin-top: 50px;
@@ -67,9 +71,12 @@
         }
         .file{
             margin-top: 10px;
-            margin-left: 100px;
+            margin-left: 10px;
             width:700px;
             
+        }
+        .container2{
+            margin-left:100px;
         }
     </style>
 </head>
@@ -79,7 +86,7 @@
         <form action="" method="post" enctype="multipart/form-data">
             {% csrf_token %}
         <center><h1><font color="brown">Edit  Profile</h1></font></center>
-        <hr>
+        <hr class="orange">
         <label> First Name</label><br>
         {% render_field userupdateform.first_name|attr:"class:edit" %}<br>
         <label> Last Name</label><br>
@@ -88,8 +95,11 @@
         {% render_field userupdateform.email|attr:"class:edit" %}<br>
         <label>Mobile</label><br>
         {% render_field chefupdateform.mobile_number|attr:"class:edit" %}<br>
+
 <label>Image</label><br>
+<div class="container2">
 {% render_field chefupdateform.profile_pic|attr:"class:file" %}
+</div>
  <div>     
     <input type="submit" value="Update" class="update">
 </div>
